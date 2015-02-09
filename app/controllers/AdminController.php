@@ -2,22 +2,21 @@
 
 class AdminController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-
 	public function getIndex() {
+		Session::put('alert');
 		return View::make('index');//->with('alert', true);
 	}
 
-	// public function show
+	public function getLogin() {
+		return View::make('login');
+	}
+
+	public function postLogin() {
+		$input = Input::all();
+		if (Auth::attempt(Input::only('username', 'password'))) {
+			return Response::json(Auth::user());
+		} else {
+			return Redirect::back();
+		}
+	}
 }

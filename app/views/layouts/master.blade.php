@@ -3,13 +3,19 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Home - Pemerintah Kota</title>
+	<title>
+		@yield('title')
+	</title>
 	<link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
+	@if(Session::has('alert')) {
+		echo "true";
+	}
+	@endif
 	<div class="header">
 		<div>
-			<a href="index.html" id="logo"><img src="images/logo.png" alt="logo"></a>
+			<a href={{url('/')}} id="logo"><img src={{asset('assets/images/logo.png')}} alt="logo"></a>
 			<div>
 				<a href="lapor.html">Lapor keluhan!</a>
 				<ul>
@@ -20,7 +26,7 @@
 						<a href="daftaraduan.html">Lihat Daftar Aduan</a>
 					</li>
 					<li>
-						<a href="login.html">Login</a>
+						<a href={{url('app/admin/login')}}>Login</a>
 					</li>
 				</ul>
 			</div>
