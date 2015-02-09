@@ -18,7 +18,7 @@ class HomeController extends BaseController {
 	public function showWelcome()
 	{
 		$admin = Admin::all();
-		return View::make('hello')->with('admin', $admin);
+		return View::make('index')->with('admin', $admin);
 	}
 
 }
