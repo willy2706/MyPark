@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class AdminController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -16,9 +16,7 @@ class HomeController extends BaseController {
 	*/
 
 	public function getIndex() {
-		// $admin = Admin::all();
-		return View::make('index')->with('admin',true);
-		// return View::make('index')->with('admin', $admin);
+		return View::make('index');//->with('alert', true);
 	}
 
 	// public function show

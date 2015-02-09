@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::group(array('prefix' => 'app/admin'), function() {
+	Route::controller('/','AdminController');
+});
