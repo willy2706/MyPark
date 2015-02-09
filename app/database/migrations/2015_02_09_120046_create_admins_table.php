@@ -12,11 +12,11 @@ class CreateAdminsTable extends Migration {
 	 */
 	public function up(){
 		Schema::dropIfExists('admins');
-		Schema::create('admins', function ($table)) {
+		Schema::create('admins', function ($table) {
 			$table->increments('id');
 			$table->string('username')->unique();
 			$table->string('password');
-		}
+		});
 	}
 
 	/**
