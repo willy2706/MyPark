@@ -47,12 +47,16 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 */
 
 App::error(
-	function(ModelNotFoundException $exception, $code) {
-		return Response::make(null, 404);
-	},
 	function(Exception $exception, $code) {
 		Log::error($exception);
 	}
+	// function(ModelNotFoundException $exception, $code) {
+		// return Response::make(null, 404);
+	// },
+	// function(Exception $exception, $code) {
+		// Log::error($exception);
+		// // return Response::json('ok');
+	// }
 );
 
 /*
