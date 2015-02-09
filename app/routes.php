@@ -10,6 +10,9 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::get('/', function() {
+	return Redirect::to('app/admin');
+});
 
 Route::group(array('prefix' => 'app/admin'), function() {
 	Route::controller('/','AdminController');
