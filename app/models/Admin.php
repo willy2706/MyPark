@@ -21,4 +21,6 @@ class Admin extends Eloquent implements UserInterface {
 	 */
 	protected $hidden = array('password');
 
+	public $timestamps = false;
+
 }
