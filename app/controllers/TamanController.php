@@ -1,5 +1,5 @@
 <?php
-
+use Carbon\Carbon;
 class TamanController extends BaseController {
 
 	public function getIndex() {
@@ -11,7 +11,16 @@ class TamanController extends BaseController {
 	}
 
 	public function postLapor() {
-		return Response::json(Input::all());
+		$file = Input::file('foto');
+		$filename = 'aduan_'.time().'.'.$file->getClientOriginalExtension();
+		$file->move(public_path().'/aduan', $filename);
+		
+		$aduan = new Aduan;
+		$aduan->fill(Input::all());
+		$aduan->foto = $filename;
+		$aduan->tanggal = Carbon::now();
+		$aduan->save();
+		return Redirect::to('/')->withalert('aduan telah disubmit');
 	}
 
 	public function getDaftaraduan() {

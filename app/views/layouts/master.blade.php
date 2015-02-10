@@ -9,10 +9,6 @@
 	<link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
-	@if(Session::has('alert')) {
-		echo "true";
-	}
-	@endif
 	<div class="header">
 		<div>
 			<a href={{url('/')}} id="logo"><img src={{asset('assets/images/logo.png')}} alt="logo"></a>
