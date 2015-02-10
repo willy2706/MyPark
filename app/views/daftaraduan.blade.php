@@ -1,4 +1,4 @@
-echo {{$daftaraduan}}
+echo {{$aduan}}
 
 @extends('layouts.master')
 
@@ -40,7 +40,7 @@ echo {{$daftaraduan}}
 
 
 
-				<h3>26-01-2015</h3>
+				<h3>{{$aduan[0]->tanggal}} WIB</h3>
 				<div class="satuaduan">
 					<div class="juduladuan">[SOLVED] ini judul aduan</div>
 					<div class= "lokasiaduan">ini lokasi aduan</div><br>
