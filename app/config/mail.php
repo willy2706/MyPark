@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'admin@mypark.com', 'name' => 'Taman Bandung'),
+	'from' => array('address' => 'mypark.bandung@gmail.com', 'name' => 'Taman Bandung'),
 
 	/*
 	|--------------------------------------------------------------------------

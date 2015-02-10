@@ -12,8 +12,8 @@ class TamanController extends BaseController {
 
 	public function postLapor() {
       /*TODO : melakukan email jika laporan valid*/
-      Mail::send('emails.notifikasi_terima_aduan', array('nama'=>Input::get('fname')), function($message){
-        $message->to(Input::get('email'), Input::get('fname'))
+      Mail::send('emails.notifikasi_terima_aduan', array('nama'=>Input::get('nama_pelapor')), function($message){
+        $message->to(Input::get('email_pelapor'), Input::get('nama_pelapor'))
                 ->subject('Notifikasi Penerimaan Aduan dari Taman Bandung');
       });
 		return Response::json(Input::all());
