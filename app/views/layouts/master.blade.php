@@ -13,6 +13,10 @@
 		echo "true";
 	}
 	@endif
+<div class="top">
+	<img class="topimg" src={{asset('assets/images/icon-profile.png')}} alt="logo"> this is the top
+</div>
+<div class="masterbody">
 	<div class="header">
 		<div>
 			<a href={{url('/')}} id="logo"><img src={{asset('assets/images/logo.png')}} alt="logo"></a>
@@ -36,6 +40,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 	@yield('content')
 	<script src="{{asset('assets/js/jquery.js')}}"></script>
 	<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>

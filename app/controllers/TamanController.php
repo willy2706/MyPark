@@ -1,5 +1,5 @@
 <?php
-
+use Carbon\Carbon;
 class TamanController extends BaseController {
 
 	public function getIndex() {
@@ -11,12 +11,22 @@ class TamanController extends BaseController {
 	}
 
 	public function postLapor() {
-      /*TODO : melakukan email jika laporan valid*/
+		$file = Input::file('foto');
+		$filename = 'aduan_'.time().'.'.$file->getClientOriginalExtension();
+		$file->move(public_path().'/aduan', $filename);
+		
+		$aduan = new Aduan;
+		$aduan->fill(Input::all());
+		$aduan->foto = $filename;
+		$aduan->tanggal = Carbon::now();
+		$aduan->save();
+      
       Mail::send('emails.notifikasi_terima_aduan', array('nama'=>Input::get('nama_pelapor')), function($message){
         $message->to(Input::get('email_pelapor'), Input::get('nama_pelapor'))
                 ->subject('Notifikasi Penerimaan Aduan dari Taman Bandung');
       });
-		return Response::json(Input::all());
+      
+		return Redirect::to('/')->withalert('aduan telah disubmit');
 	}
 
 	public function getDaftaraduan() {
