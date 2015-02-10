@@ -3,11 +3,13 @@
 class AdminController extends BaseController {
 
 	public function getIndex() {
-		Session::put('alert');
-		return View::make('index');//->with('alert', true);
+		// return Response::json('ok');
+		Session::put('admin', true);
+		return View::make('index');//->with('admin', true);
 	}
 
 	public function getLogin() {
+		Session::put('admin', true);
 		return View::make('login');
 	}
 
