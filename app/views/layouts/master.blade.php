@@ -3,13 +3,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Home - Pemerintah Kota</title>
+	<title>
+		@yield('title')
+	</title>
 	<link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="header">
 		<div>
-			<a href="index.html" id="logo"><img src="images/logo.png" alt="logo"></a>
+			<a href="index.html" id="logo"><img src={{asset('assets/images/logo.png')}} alt="logo"></a>
 			<div>
 				<a href="lapor.html">Lapor keluhan!</a>
 				<ul>

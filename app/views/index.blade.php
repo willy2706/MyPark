@@ -1,7 +1,9 @@
 @extends('layouts.master')
+
 @section('title')
 	Daftar Pengaduan - Pemerintah Kota Bandung
 @stop
+
 @section('content')
 	<div class="body">
 		<div class="home">
