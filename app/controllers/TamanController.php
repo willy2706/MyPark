@@ -13,4 +13,8 @@ class TamanController extends BaseController {
 	public function postLapor() {
 		return Response::json(Input::all());
 	}
+
+	public function getDaftaraduan() {
+		return View::make('daftaraduan');
+	}
 }
