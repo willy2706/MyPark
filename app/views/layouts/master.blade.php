@@ -27,7 +27,7 @@
 						<a href="index.html">Lihat Daftar Taman</a>
 					</li>
 					<li>
-						<a href="daftaraduan.html">Lihat Daftar Aduan</a>
+						<a href={{url("daftaraduan")}}>Lihat Daftar Aduan</a>
 					</li>
 
 					@if (Session::has('admin'))

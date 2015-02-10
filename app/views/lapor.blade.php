@@ -31,7 +31,7 @@
 				<p>
 					This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forums</a>.
 				</p-->
-				{{ Form::open(array('files'=>true, 'method'=>'post', 'class'=>'form-horizontal')) }}
+				{{ Form::open(array('files'=>true, 'method'=>'post')) }}
 					<label for="fname">* Nama
 						<input name = "nama_pelapor" type="text" id="fname" required>
 					</label>
@@ -46,15 +46,13 @@
 					</label><br>
 					<label for="email">Foto kondisi taman
 					<input type="text" width="400" class="#" style="margin:0;"> 
-					<button>Cari Foto</button>
+					{{ Form::file('foto') }}
 					</label> <p></p>
 					<label for="taman">* Nama taman <br>
-						<select>
-						  <option value="tmn1">Taman Pasupati / Jomblo</option>
-						  <option value="tmn2">Taman Lansia / Cisangkuy</option>
-						  <option value="tmn3">Taman Musik Centrum</option>
-						  <option value="tmn4">Taman Fotografi</option>
-						</select>
+					    {{Form::select('taman_id',Taman::lists('nama', 'id'), null)}}
+						<!-- <select>
+						  <option value="tmn1">Taman Pasupati</option>
+						</select> -->
 					</label><br><p></p>
 					
 					<label for="message" class="message">* Keluhan</label>
