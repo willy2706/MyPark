@@ -27,4 +27,9 @@ class Aduan extends Eloquent implements UserInterface {
 		return $orders;
 	}
 
+	public static function getStatus() {
+	$orders = static::all();
+		return $orders;
+
+	}
 }

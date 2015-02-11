@@ -1,4 +1,4 @@
-echo {{$aduan}}
+echo {{$ivana}}
 
 @extends('layouts.master')
 
@@ -39,75 +39,23 @@ echo {{$aduan}}
 
 
 
-
-				<h3>{{$aduan[0]->tanggal}} WIB</h3>
+				@foreach($ivana as $iv)
+				<h3>{{$iv->tanggal}} WIB</h3>
 				<div class="satuaduan">
-					<div class="juduladuan">[SOLVED] ini judul aduan</div>
-					<div class= "lokasiaduan">ini lokasi aduan</div><br>
+					<div class="juduladuan">{{$iv->taman_id}}</div>
+					<div class= "pelapor">{{$iv->nama_pelapor}}</div><br>
 
 					<!--div class = "gambaraduan"></div><br-->
-					<div class="isiaduan">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</div>
-					
+					<div class="isiaduan">{{$iv->deskripsi}}
 				</div>
+				@endforeach
 
-				<hr>
-				<h3>24-01-2015</h3>		
-				<div class="satuaduan">
-					<div class="juduladuan">[UNSOLVED] ini judul aduan</div>
-					<div class= "lokasiaduan">ini lokasi aduan</div><br>
-
-					<!--div class = "gambaraduan"></div><br-->
-					<div class="isiaduan">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</div>
-				</div>
-
-				<hr>
+			
 			</div>
 		</div>
 	</div>
 	<div class="footer">
-		<div>
-			<div>
-				<h4>24 hour customer service</h4>
-				<ul>
-					<li class="phone-num">
-						512-943-1069 <br> 512-943-1068
-					</li>
-					<li class="email">
-						<a href="#">info@WTPcom</a>
-					</li>
-					<li class="address">
-						1341 Oakmound Drive <br> Chicago, IL 60609
-					</li>
-				</ul>
-			</div>
-			<div>
-				<h4>Recent Tweets</h4>
-				<ul>
-					<li>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla elementum magna.
-						</p>
-						- <span><a href="blog.html">1 day ago</a></span>
-					</li>
-					<li>
-						<p>
-							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-						</p>
-						- <span><a href="blog.html">2 days ago</a></span>
-					</li>
-				</ul>
-			</div>
-
-
-
-
-
-
-
-
-
-			
-		</div>
+	
 		<div>
 			<ul>
 				<li>
