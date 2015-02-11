@@ -1,5 +1,3 @@
-echo {{$ivana}}
-
 @extends('layouts.master')
 
 @section('title')
@@ -39,14 +37,13 @@ echo {{$ivana}}
 
 
 
-				@foreach($ivana as $iv)
-				<h3>{{$iv->tanggal}} WIB</h3>
+				@foreach($aduan as $da)
+				<h3>{{$da->tanggal}} WIB</h3>
 				<div class="satuaduan">
-					<div class="juduladuan">{{$iv->taman_id}}</div>
-					<div class= "pelapor">{{$iv->nama_pelapor}}</div><br>
-
+					<div class="juduladuan">{{$da->judul}}</div><br>
+					<p> Pelapor : {{$da->nama_pelapor}}<br> </p>
 					<!--div class = "gambaraduan"></div><br-->
-					<div class="isiaduan">{{$iv->deskripsi}}
+					<div class="isiaduan">{{$da->deskripsi}}
 				</div>
 				@endforeach
 

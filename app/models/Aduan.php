@@ -37,7 +37,9 @@ class Aduan extends Eloquent implements UserInterface {
 	}
 
 	public static function getStatus() {
-	$orders = static::all();
+	$orders = DB::table('aduan')
+	->join ('update','aduan.id','=','update.aduan_id')
+	->get();
 		return $orders;
 
 	}
