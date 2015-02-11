@@ -22,9 +22,23 @@ class Aduan extends Eloquent implements UserInterface {
 
 	public $timestamps = false;
 
+	public $fillable = [
+		'foto',
+		'deskripsi',
+		'email_pelapor',
+		'nama_pelapor',
+		'taman_id',
+		'tanggal'
+	];
+
 	public static function getDaftaraduan() {
 		$orders = static::all();
 		return $orders;
 	}
 
+	public static function getStatus() {
+	$orders = static::all();
+		return $orders;
+
+	}
 }
