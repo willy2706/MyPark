@@ -35,9 +35,9 @@
 					<label for="fname">* Nama
 						<input name = "nama_pelapor" type="text" id="fname" required>
 					</label>
-<!-- 					<label for="subject">* Topik
-						<input name = "" type="text" id="subject" required>
-					</label> -->
+					<label for="subject">* Judul
+						<input name = "judul" type="text" id="subject" required>
+					</label>
 					<label for="email">* E-mail
 						<input name = "email_pelapor" type="text" id="email" required>
 					</label>
