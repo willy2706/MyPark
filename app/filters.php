@@ -60,6 +60,10 @@ Route::filter('admin', function() {
 	}
 });
 
+Route::filter('user', function() {
+	Session::flush();
+});
+
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();

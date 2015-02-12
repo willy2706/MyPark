@@ -18,4 +18,6 @@ Route::group(['before' => 'admin'], function() {
 	});
 });
 
-Route::controller('/', 'TamanController');
+Route::group(['before' => 'user'], function(){
+	Route::controller('/', 'TamanController');
+});
