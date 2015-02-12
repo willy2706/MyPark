@@ -28,40 +28,14 @@
 				</div>
 			</div>
 			<div>
-				<!--h2>Send Us A Message</h2>
-				<p>
-					This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forums</a>.
-				</p-->
 				<h2><center>Daftar aduan taman</h2> <hr></center>
 				
-
-
-
 				@foreach($aduan as $da)
 				<h3>{{$da->tanggal}} WIB</h3>
 				<div class="satuaduan">
 					<div class="juduladuan">{{$da->judul}}</div><br>
 					<p> Pelapor : {{$da->nama_pelapor}}<br> </p>
 					<p> Status : {{$da->status}} <br></p>
-					<!--div class = "gambaraduan"></div><br-->
-					<div class="isiaduan">{{$da->deskripsi}} <br><br>
-					<h4> Teruskan laporan kepada instansi : </h4>
-						<table border="0">
-					  <tr>
-					    <td><input type="checkbox" name="dinas" value="Dinas Keamanan" class="equalsides">Dinas Keamanan</td>
-					    <td><input type="checkbox" name="dinas" value="Dinas Kebakaran"class="equalsides">Dinas Kebakaran</td> 
-					    <td><input type="checkbox" name="dinas" value="Dinas Bina Marga dan Pengairan" class="equalsides">Dinas Bina Marga dan Pengairan</td>
-					  </tr>
-					  <tr>
-					    <td><input type="checkbox" name="dinas" value="Dinas Kebudayaan dan Pencatatan Sipil" class="equalsides">Dinas Kebudayaan dan Pencatatan Sipil</td>
-					    <td><input type="checkbox" name="dinas" value="Dinas Kesehatan" class="equalsides">Dinas Kesehatan</td> 
-					    <td><input type="checkbox" name="dinas" value="Dinas Komunikasi dan Informatika" >Dinas Komunikasi dan Informatika</td>
-					  </tr>
-					</table><div align="right"><p></p>
-						<input type="button" value="Kirim Pesan"> 
-
-
-					<hr>
 				</div>
 			</div>
 			@endforeach
