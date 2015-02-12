@@ -106,6 +106,13 @@ p a:hover, a:hover {
 .header div div ul li a:hover, .header div div ul li.selected a {
 	color:#fff600!important;
 }
+.header div div ul .logout a:hover::before{
+	color: #fff600!important;
+	content: "Logout ";
+}
+.header div div ul .logout a::before{
+	content: "Welcome, ";
+}
 /*------------------------- Body ---------------------------*/
 
 .body .home .featured {
