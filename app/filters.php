@@ -53,7 +53,7 @@ Route::filter('admin', function() {
 		if (Request::ajax()) {
 			return Response::make('Unauthorized', 401);
 		} else {
-
+			Session::put('admin', true);
 		}
 	} else {
 		Session::put('admin', true);
@@ -62,7 +62,6 @@ Route::filter('admin', function() {
 });
 
 Route::filter('user', function() {
-	return Response::json('ok');
 	Session::flush();
 });
 

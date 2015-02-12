@@ -27,7 +27,6 @@ class AdminController extends BaseController {
 	}
 
 	public function getLogin() {
-		// var_dump(Auth::check());
 		if (Auth::check()) {
 			return Redirect::intended('/app/admin');
 		} else {
@@ -47,6 +46,7 @@ class AdminController extends BaseController {
 	}
 
 	public function getLogout() {
+		// return Response::json('ok');
 		Auth::logout();
 		Session::flush();
 		return Redirect::to('app/admin');

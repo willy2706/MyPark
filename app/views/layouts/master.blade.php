@@ -29,7 +29,7 @@
 					</li>
 					@if (Session::has ('username'))
 					<li class = "logout">
-						<a class = "loginstate" href='#'}>{{Session::get('username')}}</a>
+						<a class = "loginstate" href={{url('app/admin/logout')}}>{{Session::get('username')}}</a>
 					</li>
 
 					@elseif (Session::has('admin'))
