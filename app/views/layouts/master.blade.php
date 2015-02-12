@@ -28,8 +28,8 @@
 						<a href={{Request::is('app/*') ? url('app/admin/daftaraduan') : url('/daftaraduan')}}>Lihat Daftar Aduan</a>
 					</li>
 					@if (Session::has ('username'))
-					<li>
-						<a class = "loginstate" href='#'}>Welcome, {{Session::get('username')}}</a>
+					<li class = "logout">
+						<a class = "loginstate" href='#'}>{{Session::get('username')}}</a>
 					</li>
 
 					@elseif (Session::has('admin'))
