@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Auth\UserTrait;
+use Illuminate\Auth\UserInterface;
+
 class Taman extends Eloquent {
 
 	/**
@@ -17,5 +20,18 @@ class Taman extends Eloquent {
 	protected $hidden = array('password');
 
 	public $timestamps = false;
+
+	public $fillable = [
+		'id',
+		'foto',
+		'deskripsi',
+		'nama'
+	];
+
+	public static function getDaftartaman(){
+		$orders = Taman::all();
+		return $orders;
+	}
+
 
 }

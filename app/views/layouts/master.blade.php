@@ -11,7 +11,7 @@
 <body>
 @if (Session::has('username'))
 <div class="top">
-	<img class="topimg" src={{asset('assets/images/icon-profile.png')}} alt="logo"> this is the top
+	<img class="topimg" src={{asset('assets/images/icon-profile.png')}} alt="logo">this is the top
 </div>
 <div class="masterbody">
 @endif
