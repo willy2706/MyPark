@@ -9,12 +9,6 @@
 	<link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
-@if (Session::has('username'))
-<div class="top">
-	<img class="topimg" src={{asset('assets/images/icon-profile.png')}} alt="logo">this is the top
-</div>
-<div class="masterbody">
-@endif
 	<div class="header">
 		<div>		
 			<a href={{Request::is('app/*') ? url('app/admin') : url('/')}} id="logo"><img src={{asset('assets/images/logo.png')}} alt="logo"></a>
@@ -42,7 +36,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 	@yield('content')
 	<script src="{{asset('assets/js/jquery.js')}}"></script>
 	<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>

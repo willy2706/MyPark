@@ -1550,3 +1550,6 @@ p a:hover, a:hover {
 	width: 400px;
 	height: 200px;
 }
+.indeximg a:hover{
+	opacity: 50%;
+}

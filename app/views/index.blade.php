@@ -27,7 +27,7 @@
 			
 				<div>
 					<div>
-						<img src="{{$taman->foto}}" alt="" class="indeximg">
+						<a href = "#"><img src="{{$taman->foto}}" alt="" class="indeximg"></a>
 							<h2>{{$taman->nama}} <br></h2>
 							<p>
 								<b>Letak</b> : {{$taman->alamat}} <br>
