@@ -22,7 +22,7 @@
 				<a href={{url("lapor")}}>Lapor keluhan!</a>
 				<ul>
 					<li>
-						<a href={{url('/')}}>Lihat Daftar Taman</a>
+						<a href={{Request::is('app/*') ? url('app/admin') : url('/')}}>Lihat Daftar Taman</a>
 					</li>
 					<li>
 						<a href={{url("daftaraduan")}}>Lihat Daftar Aduan</a>
