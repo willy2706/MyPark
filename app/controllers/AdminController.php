@@ -13,9 +13,13 @@ class AdminController extends BaseController {
 	}
 
 	public function getLogin() {
-		// var_dump(Auth:: check());exit;
-		Session::put('admin', true);
-		return View::make('login');
+		// var_dump(Auth::check());
+		if (Auth::check()) {
+			return Redirect::intended('/app/admin');
+		} else {
+			Session::put('admin', true);
+			return View::make('login');
+		}
 	}
 
 	public function postLogin() {
@@ -26,5 +30,11 @@ class AdminController extends BaseController {
 		} else {
 			return Redirect::back();
 		}
+	}
+
+	public function getLogout() {
+		Auth::logout();
+		Session::flush();
+		return Redirect::to('app/admin');
 	}
 }
