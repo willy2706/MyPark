@@ -27,6 +27,7 @@ class Aduan extends Eloquent {
 		'email_pelapor',
 		'nama_pelapor',
 		'taman_id',
+		'judul',
 		'tanggal'
 	];
 

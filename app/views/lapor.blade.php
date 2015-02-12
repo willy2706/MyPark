@@ -31,7 +31,7 @@
 				<p>
 					This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forums</a>.
 				</p-->
-				{{ Form::open(array('files'=>true, 'method'=>'post','onsubmit'=>'myFunction();')) }}
+				{{ Form::open(array('files'=>true, 'method'=>'post','onsubmit'=>'return myFunction();')) }}
 					<label for="fname">* Nama
 						<input name = "nama_pelapor" type="text" id="fname" required>
 					</label>
@@ -58,6 +58,7 @@
 					<label for="message" class="message">* Keluhan</label>
 					<textarea name="deskripsi" id="message" cols="30" rows="10" required></textarea>
 					<input type="submit" value="" class="submitaduan">
+				{{ Form::close() }}
 			</div>
 		</div>
 	</div>
@@ -73,9 +74,6 @@
 	        document.getElementById("email").style.borderColor = "#E34234";
 	        document.getElementById("email2").style.borderColor = "#E34234";
 	        ok = false;
-	    }
-	    else {
-	        <!-- alert("Passwords Match!!!"); -->
 	    }
 	    return ok;
 	}
