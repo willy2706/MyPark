@@ -35,26 +35,21 @@ class Aduan extends Eloquent {
 		return $orders;
 	}
 
-	public static function getStatus() {
-	$orders = DB::table('aduan')
-	->join ('update','aduan.id','=','update.aduan_id')
-	->get();
-		return $orders;
-
-	}
+	// public static function getStatus() {
+	// $orders = DB::table('aduan')
+	// ->join ('update','aduan.id','=','update.aduan_id')
+	// ->get();
+	// 	return $orders;
+	// }
 
 	public function getStatusAttribute() {
-		$temp = $this->myupdate();
-		// var_dump($temp);exit;
-		// if ($temp == null) {
-		// 	return 'UNSOLVED';
-		// } else {
-		// 	return $temp->orderBy('waktu','desc')->select('status')->first();
-		// }
+		$temp = $this->updateTable()->orderBy('waktu','desc')->first();
+		if ($temp == null) return 'UNSOLVED';
+		else return $temp->pluck('status');
 	}
 
-	public function myupdate() {
-		$this->hasMany('Update');
+	public function updateTable() {
+		return $this->hasMany('Update','aduan_id');
 	}
 
 
