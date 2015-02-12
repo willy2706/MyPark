@@ -4,12 +4,26 @@ class AdminController extends BaseController {
 
 	public function getIndex() {
 		$daftartaman = Taman::getDaftartaman();
-		Session::put('admin', true);
 		if (Auth::check()) {
 			Session::put('username',Auth::user()->username);
 			return View::make('index')->withdaftartaman($daftartaman);
 		} else 
 			return View::make('index')->withdaftartaman($daftartaman);
+	}
+
+	public function getLapor() {
+		$controller = new TamanController;
+		return $controller->getLapor();
+	}
+
+	public function postLapor() {
+		$controller = new TamanController;
+		return $controller->postLapor();
+	}
+
+	public function getDaftaraduan() {
+		$controller = new TamanController;
+		return $controller->getDaftaraduan();
 	}
 
 	public function getLogin() {

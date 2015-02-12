@@ -56,11 +56,13 @@ Route::filter('admin', function() {
 
 		}
 	} else {
-
+		Session::put('admin', true);
+		Session::put('username', Auth::user()->username);
 	}
 });
 
 Route::filter('user', function() {
+	return Response::json('ok');
 	Session::flush();
 });
 
