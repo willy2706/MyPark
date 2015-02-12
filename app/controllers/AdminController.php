@@ -4,7 +4,6 @@ class AdminController extends BaseController {
 
 	public function getIndex() {
 		$daftartaman = Taman::getDaftartaman();
-		Session::put('admin', true);
 		if (Auth::check()) {
 			Session::put('username',Auth::user()->username);
 			return View::make('index')->withdaftartaman($daftartaman);
@@ -12,8 +11,22 @@ class AdminController extends BaseController {
 			return View::make('index')->withdaftartaman($daftartaman);
 	}
 
+	public function getLapor() {
+		$controller = new TamanController;
+		return $controller->getLapor();
+	}
+
+	public function postLapor() {
+		$controller = new TamanController;
+		return $controller->postLapor();
+	}
+
+	public function getDaftaraduan() {
+		$controller = new TamanController;
+		return $controller->getDaftaraduan();
+	}
+
 	public function getLogin() {
-		// var_dump(Auth::check());
 		if (Auth::check()) {
 			return Redirect::intended('/app/admin');
 		} else {
@@ -33,6 +46,7 @@ class AdminController extends BaseController {
 	}
 
 	public function getLogout() {
+		// return Response::json('ok');
 		Auth::logout();
 		Session::flush();
 		return Redirect::to('app/admin');
