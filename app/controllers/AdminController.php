@@ -3,6 +3,8 @@
 class AdminController extends BaseController {
 
 	public function getIndex() {
+		return Response::json(Aduan::all());
+
 		Session::put('admin', true);
 		if (Auth::check()) {
 			Session::put('username',Auth::user()->username);
