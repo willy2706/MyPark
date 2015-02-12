@@ -13,13 +13,14 @@
 			<hr width="75%">
 			<div class="aduanbody">
 			<h2>Tanggal Pelaporan : 11111111111111111 <br></h2>
-			<b>Isi Laporan</b> : 
+			<h2>Isi Laporan</h2> : 
 			<p> adadadadasdadfa 
 			asdfasdasdfasdfasdf
 			</p>
 			</div>
 			<div class="aduandinas">
 			<h4> Teruskan laporan kepada instansi : </h4>
+			<form>
 					<table border="0">
 					  <tr>
 					    <td><input type="checkbox" name="dinas" value="Dinas Keamanan" class="equalsides">Dinas Keamanan</td>
@@ -32,8 +33,9 @@
 					    <td><input type="checkbox" name="dinas" value="Dinas Komunikasi dan Informatika" >Dinas Komunikasi dan Informatika</td>
 					  </tr>
 					</table><div align="right"><p></p>
-						<input type="button" value="Kirim Pesan"> 
+						<input type="submit" value="Kirim Pesan"> <!-- harusnya ada alert klo diklik -->
 					</div>
+			</form>
 
 			</div>
 
