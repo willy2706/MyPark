@@ -42,6 +42,7 @@
 				<div class="satuaduan">
 					<div class="juduladuan">{{$da->judul}}</div><br>
 					<p> Pelapor : {{$da->nama_pelapor}}<br> </p>
+					<p> Status : {{$da->status}} <br></p>
 					<!--div class = "gambaraduan"></div><br-->
 					<div class="isiaduan">{{$da->deskripsi}}
 				</div>
