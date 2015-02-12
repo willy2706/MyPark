@@ -53,11 +53,15 @@ Route::filter('admin', function() {
 		if (Request::ajax()) {
 			return Response::make('Unauthorized', 401);
 		} else {
-			return Redirect::guest('/');
+
 		}
 	} else {
 
 	}
+});
+
+Route::filter('user', function() {
+	Session::flush();
 });
 
 Route::filter('auth.basic', function()

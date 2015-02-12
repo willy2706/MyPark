@@ -1,11 +1,6 @@
 <?php
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-
-class Aduan extends Eloquent implements UserInterface {
-
-	use UserTrait;
+class Aduan extends Eloquent {
 
 	/**
 	 * The database table used by the model.
@@ -21,6 +16,10 @@ class Aduan extends Eloquent implements UserInterface {
 	 */
 
 	public $timestamps = false;
+
+	public $appends = [
+		'status'
+	];
 
 	public $fillable = [
 		'foto',
@@ -43,4 +42,20 @@ class Aduan extends Eloquent implements UserInterface {
 		return $orders;
 
 	}
+
+	public function getStatusAttribute() {
+		$temp = $this->myupdate();
+		// var_dump($temp);exit;
+		// if ($temp == null) {
+		// 	return 'UNSOLVED';
+		// } else {
+		// 	return $temp->orderBy('waktu','desc')->select('status')->first();
+		// }
+	}
+
+	public function myupdate() {
+		$this->hasMany('Update');
+	}
+
+
 }
