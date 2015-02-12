@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 class TamanTableSeeder extends Seeder {
 	public function run(){
-		DB::table('taman') -> delete();
+		// DB::table('taman') -> delete();
 
 		$taman = array(
 //foto, alamat, nama

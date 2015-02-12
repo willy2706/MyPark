@@ -12,9 +12,10 @@
 // Route::get('/', function() {
 // 	return Redirect::to('app/admin');
 // });
-// Route::group(['before' => 'admin'], function() {
+Route::group(['before' => 'admin'], function() {
 	Route::group(array('prefix' => 'app/admin'), function() {
 		Route::controller('/','AdminController');
 	});
-// });
+});
+
 Route::controller('/', 'TamanController');
