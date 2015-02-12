@@ -1553,3 +1553,18 @@ p a:hover, a:hover {
 .indeximg a:hover{
 	opacity: 50%;
 }
+.aduantitle{
+	text-align: center;
+}
+.aduanbody{
+	margin-left: 25%;
+	margin-right: 25%;
+}
+.aduandinas{
+	margin-left: 25%;
+	margin-right: 25%;
+	font-size: 80%;
+}
+.aduandinas td{
+	width: 33%;
+}

@@ -44,8 +44,8 @@
 					<p> Pelapor : {{$da->nama_pelapor}}<br> </p>
 					<p> Status : {{$da->status}} <br></p>
 					<!--div class = "gambaraduan"></div><br-->
-					<div class="isiaduan">{{$da->deskripsi}} <br><br>
-					<h4> Teruskan laporan kepada instansi : </h4>
+					<!-- <div class="isiaduan">{{$da->deskripsi}} <br><br> -->
+					<!-- <h4> Teruskan laporan kepada instansi : </h4>
 						<table border="0">
 					  <tr>
 					    <td><input type="checkbox" name="dinas" value="Dinas Keamanan" class="equalsides">Dinas Keamanan</td>
@@ -61,7 +61,7 @@
 						<input type="button" value="Kirim Pesan"> 
 
 
-					<hr>
+					<hr> -->
 				</div>
 			</div>
 			@endforeach
