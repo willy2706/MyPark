@@ -29,12 +29,13 @@
 					</li>
 					@if (Session::has ('username'))
 					<li>
-						<a href='#'}>Welcome, {{Session::get('username')}}</a>
+						<a class = "loginstate" href='#'}>Welcome, {{Session::get('username')}}</a>
 					</li>
+
 					@elseif (Session::has('admin'))
 					{{Session::forget('admin')}}
 					<li>
-						<a href={{url('app/admin/login')}}>Login</a>
+						<a  href={{url('app/admin/login')}}>Login</a>
 					</li>
 					@endif
 				</ul>
@@ -45,4 +46,7 @@
 	@yield('content')
 	<script src="{{asset('assets/js/jquery.js')}}"></script>
 	<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript">
+	@yield('javascript')
+	</script>
 </body>

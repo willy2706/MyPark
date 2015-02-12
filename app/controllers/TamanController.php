@@ -14,12 +14,15 @@ class TamanController extends BaseController {
 	}
 
 	public function postLapor() {
+		$input = Input::all();
+		return Response::json(Input::all());
+
 		$file = Input::file('foto');
 		$filename = 'aduan_'.time().'.'.$file->getClientOriginalExtension();
 		$file->move(public_path().'/aduan', $filename);
 		
 		$aduan = new Aduan;
-		$aduan->fill(Input::all());
+		$aduan->fill($input);
 		$aduan->foto = $filename;
 		$aduan->tanggal = Carbon::now();
 		$aduan->save();
