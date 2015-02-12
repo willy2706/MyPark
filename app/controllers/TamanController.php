@@ -27,6 +27,7 @@ class TamanController extends BaseController {
 		$aduan->fill($input);
 		$aduan->foto = $filename;
 		$aduan->tanggal = Carbon::now();
+		// return Response::json($aduan);
 		$aduan->save();
       
 		Mail::send('emails.notifikasi_terima_aduan', array('nama'=>Input::get('nama_pelapor')), function($message){
