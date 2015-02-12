@@ -44,13 +44,27 @@
 					<p> Pelapor : {{$da->nama_pelapor}}<br> </p>
 					<p> Status : {{$da->status}} <br></p>
 					<!--div class = "gambaraduan"></div><br-->
-					<div class="isiaduan">{{$da->deskripsi}}
+					<div class="isiaduan">{{$da->deskripsi}} <br><br>
+					<h4> Teruskan laporan kepada instansi : </h4>
+						<table border="0">
+					  <tr>
+					    <td><input type="checkbox" name="dinas" value="Dinas Keamanan" class="equalsides">Dinas Keamanan</td>
+					    <td><input type="checkbox" name="dinas" value="Dinas Kebakaran"class="equalsides">Dinas Kebakaran</td> 
+					    <td><input type="checkbox" name="dinas" value="Dinas Bina Marga dan Pengairan" class="equalsides">Dinas Bina Marga dan Pengairan</td>
+					  </tr>
+					  <tr>
+					    <td><input type="checkbox" name="dinas" value="Dinas Kebudayaan dan Pencatatan Sipil" class="equalsides">Dinas Kebudayaan dan Pencatatan Sipil</td>
+					    <td><input type="checkbox" name="dinas" value="Dinas Kesehatan" class="equalsides">Dinas Kesehatan</td> 
+					    <td><input type="checkbox" name="dinas" value="Dinas Komunikasi dan Informatika" >Dinas Komunikasi dan Informatika</td>
+					  </tr>
+					</table><div align="right"><p></p>
+						<input type="button" value="Kirim Pesan"> 
+
+
 					<hr>
 				</div>
-				@endforeach
-
-			
 			</div>
+			@endforeach
 		</div>
 	</div>
 	<div class="footer">
