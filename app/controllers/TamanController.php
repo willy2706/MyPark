@@ -3,7 +3,10 @@ use Carbon\Carbon;
 class TamanController extends BaseController {
 
 	public function getIndex() {
-		return View::make('index');//->with('alert', true);
+		//return View::make('index');//->with('alert', true);
+
+		$daftartaman = Taman::getDaftartaman();
+		return View::make('index')->withdaftartaman($daftartaman);
 	}
 
 	public function getLapor() {
