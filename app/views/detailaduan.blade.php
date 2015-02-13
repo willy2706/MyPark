@@ -45,29 +45,32 @@
 						<option value="SOLVED">Selesai</option>
 					</select>  -->
 					<input id="simpanstatus" type="button" value="Simpan Status">
-					<table border="0">
-					<?php
-						$counter = 0;
-					?>
-					@foreach($instansi as $datainstansi)
-					<?php
+					{{ Form::open(array('method'=>'post')) }}
+						{{ Form::hidden('id_aduan', $data->id) }}
+						<table border="0">
+						<?php
+							$counter = 0;
+						?>
+						@foreach($instansi as $datainstansi)
+						<?php
 
-						if ($counter % 3 == 0) {
-							echo "<tr>";
-						}
-					?>
-						<td><input type="checkbox" name="dinas" value="{{$datainstansi->nama}}"> {{$datainstansi->nama}} </td>
-					  <?php
-					  	if ($counter % 3 == 2){
-							echo "</tr>";
-					  	}
-					  	$counter++;
-					  ?>
-					@endforeach  
-					</table>
-					<div align="right"><p></p>
-						<input type="button" value="Kirim Pesan">
-					<p></p>
+							if ($counter % 3 == 0) {
+								echo "<tr>";
+							}
+						?>
+							<td>{{Form::checkbox('dinas[]', $datainstansi->id);}} {{$datainstansi->nama}} </td>
+						  <?php
+						  	if ($counter % 3 == 2){
+								echo "</tr>";
+						  	}
+						  	$counter++;
+						  ?>
+						@endforeach  
+							</table>
+						<div align="right"><p></p>
+							<input type="submit" value="Kirim Pesan">
+						<p></p>
+					{{Form::close()}}
 					</div>
 				</div>
 			</div>

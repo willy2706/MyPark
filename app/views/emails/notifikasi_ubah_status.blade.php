@@ -7,7 +7,7 @@
 		<h2>Notifikasi Perubahan Status Aduan</h2>
       
       <p>Hi, {{$nama}} </p>
-      <p>Aduan Anda telah diproses lebih lanjut dan diubah statusnya menjadi {{$status}}</p>
+      <p>Aduan Anda telah diproses lebih lanjut dan diubah statusnya menjadi {{$update->status}} pada waktu {{$update->waktu}}</p>
       <br/>
 		<p>Terima kasih,</p>
       <p>Taman Bandung</p>
