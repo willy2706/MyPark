@@ -4,7 +4,7 @@
 	Daftar Taman - Pemerintah Kota Bandung
 @stop
 
-@section('content')
+<!-- @section('content')
 	<div class="body">
 		<div class="home">
 			<div class="featured">
@@ -48,4 +48,4 @@
 			
 		</div>
 	</div>
-@stop
+@stop -->
