@@ -26,6 +26,10 @@ class AdminController extends BaseController {
 		return $controller->getDaftaraduan();
 	}
 
+	public function getDetailaduan($id) {
+		return Response::json('asdf');
+	}
+
 	public function getLogin() {
 		if (Auth::check()) {
 			return Redirect::intended('/app/admin');

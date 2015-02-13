@@ -43,7 +43,9 @@
 						<td>{{$da->judul}}</td>
 						<td>{{$da->status}}</td>
 						<td>{{$da->tanggal}} WIB</td>
-						<td><a href="pulic/app/admin/detailaduan">Edit</a></td>
+						@if (Auth::user())
+							<td><a href={{url('app/admin/detailaduan/'.$da->id)}}>Edit</a></td>
+						@endif
 					</tr>
 					@endforeach
 				</table>
