@@ -27,7 +27,8 @@ class AdminController extends BaseController {
 	}
 
 	public function getDetailaduan($id) {
-		return Response::json('asdf');
+		$controller = new TamanController;
+		return $controller->getDetailaduan($id);
 	}
 
 	public function getLogin() {

@@ -40,7 +40,7 @@ class TamanController extends BaseController {
 
 	public function getDaftaraduan() {
 		$daftaraduan = Aduan::getDaftaraduan();
-		return View::make('daftaraduan_admin')->withaduan($daftaraduan);
+		return View::make('daftaraduan')->withaduan($daftaraduan);
 	}
 
 	public function getAduan(){
@@ -48,9 +48,11 @@ class TamanController extends BaseController {
 		return View::make('aduan')->withaduan($aduan);//->withdaftardinas($daftardinas);
 	}
 
-	public function getDetailaduan(){
-		$aduan = Aduan::getDaftaraduan();
-		return View::make('detailaduan')->withaduan($aduan);//->withdaftardinas($daftardinas);
+	public function getDetailaduan($id){
+		$input = Input::all(); 
+		$instance = Aduan::find($id);
+		$taman = Taman::find(Aduan::find($id)->taman_id);
+		return View::make('detailaduan')->withdata($instance)->withtaman($taman);//->withdaftardinas($daftardinas);
 	}
 
 }
