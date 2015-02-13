@@ -43,17 +43,36 @@
 						<option value="solved">Selesai</option>
 						<option value="notsolved">Tidak Dikerjakan</option>
 					</select> <input type="button" value="Simpan Status"> <p></p>
+
 					<table border="0">
-					  <tr>
-					    <td><input type="checkbox" name="dinas" value="Dinas Keamanan" class="equalsides">Dinas Keamanan</td>
-					    <td><input type="checkbox" name="dinas" value="Dinas Kebakaran"class="equalsides">Dinas Kebakaran</td> 
-					    <td><input type="checkbox" name="dinas" value="Dinas Bina Marga dan Pengairan" class="equalsides">Dinas Bina Marga dan Pengairan</td>
+					<?php
+						$counter = 0;
+					?>
+					@foreach($data as $datainstansi)
+					<?php
+
+						if ($counter % 3 == 0) {
+							echo "<tr>";
+						}
+					?>
+						<td><input type="checkbox" name="dinas" value="{{$datainstansi->nama}}"</td>
+					  <!--tr>
+					    <td><input type="checkbox" name="dinas" value="Dinas Keamanan" >Dinas Keamanan</td>
+					    <td><input type="checkbox" name="dinas" value="Dinas Kebakaran">Dinas Kebakaran</td> 
+					    <td><input type="checkbox" name="dinas" value="Dinas Bina Marga dan Pengairan" >Dinas Bina Marga dan Pengairan</td>
 					  </tr>
 					  <tr>
-					    <td><input type="checkbox" name="dinas" value="Dinas Kebudayaan dan Pencatatan Sipil" class="equalsides">Dinas Kebudayaan dan Pencatatan Sipil</td>
-					    <td><input type="checkbox" name="dinas" value="Dinas Kesehatan" class="equalsides">Dinas Kesehatan</td> 
+					    <td><input type="checkbox" name="dinas" value="Dinas Kebudayaan dan Pencatatan Sipil" >Dinas Kebudayaan dan Pencatatan Sipil</td>
+					    <td><input type="checkbox" name="dinas" value="Dinas Kesehatan" >Dinas Kesehatan</td> 
 					    <td><input type="checkbox" name="dinas" value="Dinas Komunikasi dan Informatika" >Dinas Komunikasi dan Informatika</td>
-					  </tr>
+					  </tr-->
+					  <?php
+					  	if ($counter % 3 == 2){
+							echo "</tr>";
+					  	}
+					  	$counter++;
+					  ?>
+					@endforeach  
 					</table><div align="right"><p></p>
 						<input type="button" value="Kirim Pesan"> 
 
