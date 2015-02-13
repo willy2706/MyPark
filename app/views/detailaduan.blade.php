@@ -32,16 +32,19 @@
 				
 				<h3>26-01-2015</h3>
 				<div class="satuaduan">
-					<div class="juduladuan">ini judul aduan</div>
-					<div class= "lokasiaduan">ini lokasi aduan</div><br>
+					<div class="juduladuan">{{$data->judul}}</div>
+					<div class= "lokasiaduan">{{$taman->nama}}, alamat: {{$taman->alamat}}</div><br>
 
 					<!--div class = "gambaraduan"></div><br-->
-					<div class="isiaduan">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</div>
+					<div class="isiaduan">{{$data->deskripsi}}</div>
 					<br> <select>
 						<!--option value="unsolved">Belum Diperbaiki</option>
 						<option value="diterima">Dalam Perbaikan</option-->
-						<option value="solved">Selesai</option>
-						<option value="notsolved">Tidak Dikerjakan</option>
+						<option value="UNSOLVED">Belum Ditangani</option>
+						<option value="IN PROGRESS">Sedang Ditangani</option>
+						<option value="INVALID">Tidak Valid</option>
+						<option value="SOLVED">Selesai</option>
+
 					</select> <input type="button" value="Simpan Status"> <p></p>
 					<table border="0">
 					  <tr>
@@ -59,7 +62,7 @@
 
 					<p></p>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

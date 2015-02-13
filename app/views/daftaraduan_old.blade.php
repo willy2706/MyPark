@@ -28,28 +28,17 @@
 				</div>
 			</div>
 			<div>
-				<h2><center>Daftar aduan taman</center> <hr> </h2> 
+				<h2><center>Daftar aduan taman</h2> <hr></center>
 				
-				
-				<table>
-					<tr>
-						<th>Judul</th>
-						<th>Status</th>
-						<th>Tanggal</th>
-						<th></th>
-					</tr>
-					@foreach($aduan as $da)
-					<tr>
-						<td>{{$da->judul}}</td>
-						<td>{{$da->status}}</td>
-						<td>{{$da->tanggal}} WIB</td>
-						@if (Auth::user())
-							<td><a href={{url('app/admin/detailaduan/'.$da->id)}}>Edit</a></td>
-						@endif
-					</tr>
-					@endforeach
-				</table>
+				@foreach($aduan as $da)
+				<h3>{{$da->tanggal}} WIB</h3>
+				<div class="satuaduan">
+					<div class="juduladuan">{{$da->judul}}</div><br>
+					<p> Pelapor : {{$da->nama_pelapor}}<br> </p>
+					<p> Status : {{$da->status}} <br></p>
+				</div>
 			</div>
+			@endforeach
 		</div>
 	</div>
 	<div class="footer">
