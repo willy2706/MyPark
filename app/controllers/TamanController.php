@@ -40,10 +40,17 @@ class TamanController extends BaseController {
 
 	public function getDaftaraduan() {
 		$daftaraduan = Aduan::getDaftaraduan();
-		return View::make('daftaraduan')->withaduan($daftaraduan);
+		return View::make('daftaraduan_admin')->withaduan($daftaraduan);
 	}
+
 	public function getAduan(){
 		$aduan = Aduan::getDaftaraduan();
 		return View::make('aduan')->withaduan($aduan);//->withdaftardinas($daftardinas);
 	}
+
+	public function getDetailaduan(){
+		$aduan = Aduan::getDaftaraduan();
+		return View::make('detailaduan')->withaduan($aduan);//->withdaftardinas($daftardinas);
+	}
+
 }
