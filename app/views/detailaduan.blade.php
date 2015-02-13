@@ -40,8 +40,11 @@
 					<br> <select>
 						<!--option value="unsolved">Belum Diperbaiki</option>
 						<option value="diterima">Dalam Perbaikan</option-->
-						<option value="solved">Selesai</option>
-						<option value="notsolved">Tidak Dikerjakan</option>
+						<option value="UNSOLVED">Belum Ditangani</option>
+						<option value="IN PROGRESS">Sedang Ditangani</option>
+						<option value="INVALID">Tidak Valid</option>
+						<option value="SOLVED">Selesai</option>
+
 					</select> <input type="button" value="Simpan Status"> <p></p>
 
 					<table border="0">
