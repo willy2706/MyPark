@@ -52,7 +52,8 @@ class TamanController extends BaseController {
 		$input = Input::all(); 
 		$instance = Aduan::find($id);
 		$taman = Taman::find(Aduan::find($id)->taman_id);
-		return View::make('detailaduan')->withdata($instance)->withtaman($taman);
+		$instansi = PihakB::getDaftarpihak();
+		return View::make('detailaduan')->withdata($instance)->withtaman($taman)->withinstansi($instansi);
 	}
 
 }

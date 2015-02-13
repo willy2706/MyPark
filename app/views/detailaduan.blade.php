@@ -51,24 +51,14 @@
 					<?php
 						$counter = 0;
 					?>
-					@foreach($data as $datainstansi)
+					@foreach($instansi as $datainstansi)
 					<?php
 
 						if ($counter % 3 == 0) {
 							echo "<tr>";
 						}
 					?>
-						<td><input type="checkbox" name="dinas" value="{{$datainstansi->nama}}"</td>
-					  <!--tr>
-					    <td><input type="checkbox" name="dinas" value="Dinas Keamanan" >Dinas Keamanan</td>
-					    <td><input type="checkbox" name="dinas" value="Dinas Kebakaran">Dinas Kebakaran</td> 
-					    <td><input type="checkbox" name="dinas" value="Dinas Bina Marga dan Pengairan" >Dinas Bina Marga dan Pengairan</td>
-					  </tr>
-					  <tr>
-					    <td><input type="checkbox" name="dinas" value="Dinas Kebudayaan dan Pencatatan Sipil" >Dinas Kebudayaan dan Pencatatan Sipil</td>
-					    <td><input type="checkbox" name="dinas" value="Dinas Kesehatan" >Dinas Kesehatan</td> 
-					    <td><input type="checkbox" name="dinas" value="Dinas Komunikasi dan Informatika" >Dinas Komunikasi dan Informatika</td>
-					  </tr-->
+						<td><input type="checkbox" name="dinas" value="{{$datainstansi->nama}}"> {{$datainstansi->nama}} </td>
 					  <?php
 					  	if ($counter % 3 == 2){
 							echo "</tr>";
@@ -83,34 +73,6 @@
 				</div>
 
 			</div>
-		</div>
-	</div>
-	<div class="footer">
-	
-		<div>
-			<ul>
-				<li>
-					<a href="index.html">Home</a>
-				</li>
-				<li>
-					<a href="about.html">About</a>
-				</li>
-				<li>
-					<a href="programs.html">Our Programs</a>
-				</li>
-				<li>
-					<a href="gallery.html">Gallery</a>
-				</li>
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-				<li>
-					<a href="blog.html">Blog</a>
-				</li>
-			</ul>
-			<p>
-				&#169; 2023 World Tree Preservation. All Rights Reserved
-			</p>
 		</div>
 	</div>
 @stop
