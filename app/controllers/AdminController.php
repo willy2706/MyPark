@@ -1,5 +1,5 @@
 <?php
-
+use Carbon\Carbon;
 class AdminController extends BaseController {
 
 	public function getIndex() {
@@ -59,5 +59,20 @@ class AdminController extends BaseController {
 		Auth::logout();
 		Session::flush();
 		return Redirect::to('app/admin');
+	}
+
+	public function postUpdatestatus($aduan_id) {
+		try {
+			$input = Input::all();
+			$update = new Update;
+			$update->status = $input['status'];
+			$update->waktu = Carbon::now();
+			$update->admin_id = Auth::user()->id;
+			$update->aduan_id = $aduan_id;
+			$update->save();
+			return Response::json("data berhasil disimpan");
+		} catch (Exception $ex) {
+			return Response::json('data gagal disimpan');
+		}
 	}
 }

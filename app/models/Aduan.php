@@ -44,13 +44,14 @@ class Aduan extends Eloquent {
 	// }
 
 	public function getStatusAttribute() {
-		$temp = $this->updateTable()->orderBy('waktu','desc')->first();
+		$temp = $this->updateTable()->orderBy('waktu','desc');
+		// var_dump($temp->orderBy('waktu','desc')->lists('status'));exit;
 		if ($temp == null) return 'UNSOLVED';
 		else return $temp->pluck('status');
 	}
 
 	public function updateTable() {
-		return $this->hasMany('Update','aduan_id');
+		return $this->hasMany('Update');
 	}
 
 

@@ -3,8 +3,6 @@ use Carbon\Carbon;
 class TamanController extends BaseController {
 
 	public function getIndex() {
-		//return View::make('index');//->with('alert', true);
-
 		$daftartaman = Taman::getDaftartaman();
 		return View::make('index')->withdaftartaman($daftartaman);
 	}
@@ -52,8 +50,8 @@ class TamanController extends BaseController {
 		$input = Input::all(); 
 		$instance = Aduan::find($id);
 		$taman = Taman::find(Aduan::find($id)->taman_id);
+		// return Response::json($instance);
 		$instansi = PihakB::getDaftarpihak();
 		return View::make('detailaduan')->withdata($instance)->withtaman($taman)->withinstansi($instansi);
 	}
-
 }

@@ -28,25 +28,23 @@
 				</div>
 			</div>
 			<div>
-				<h2><center>Daftar aduan taman</center> <hr> </h2> 
-				
+				<h2><center>Daftar aduan taman</center> <hr> </h2>	
 				<h3>26-01-2015</h3>
 				<div class="satuaduan">
+					<div type="hidden" id= "aduan">{{$data->id}}</div>
 					<div class="juduladuan">{{$data->judul}}</div>
 					<div class= "lokasiaduan">{{$taman->nama}}, alamat: {{$taman->alamat}}</div><br>
-
-					<!--div class = "gambaraduan"></div><br-->
 					<div class="isiaduan">{{$data->deskripsi}}</div>
-					<br> <select>
-						<!--option value="unsolved">Belum Diperbaiki</option>
-						<option value="diterima">Dalam Perbaikan</option-->
+					<br> 
+					{{Form::select('options', array('UNSOLVED' => 'Belum Ditangani', 'IN PROGRESS' => 'Sedang Ditangani', 'INVALID' => 'Tidak Valid', 'SOLVED' => 'Selesai'), $data->status, array('id' => 'options'))}}
+					<!-- 
+					<select id="options">
 						<option value="UNSOLVED">Belum Ditangani</option>
 						<option value="IN PROGRESS">Sedang Ditangani</option>
 						<option value="INVALID">Tidak Valid</option>
 						<option value="SOLVED">Selesai</option>
-
-					</select> <input type="button" value="Simpan Status"> <p></p>
-
+					</select>  -->
+					<input id="simpanstatus" type="button" value="Simpan Status">
 					<table border="0">
 					<?php
 						$counter = 0;
@@ -66,13 +64,36 @@
 					  	$counter++;
 					  ?>
 					@endforeach  
-					</table><div align="right"><p></p>
-						<input type="button" value="Kirim Pesan"> 
-
+					</table>
+					<div align="right"><p></p>
+						<input type="button" value="Kirim Pesan">
 					<p></p>
+					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
+@stop
+
+@section('javascript')
+$(document).ready(function() {
+    $("#simpanstatus").click(function(){
+    	var options = $('#options').val();
+    	var id = ($('#aduan')[0]).innerHTML;
+    	var host = window.location.host;
+		$.ajax({
+		    type: 'post',
+		    url: 'http://'+host+'/app/admin/updatestatus/'+id+'?status='+options,
+		    beforeSend: function(request) {
+		        return request.setRequestHeader('X-CSRF-Token', $("meta[name='token']").attr('content'));
+		    },
+		    success: function(data) {
+		    	alert(data);
+		    },
+		    error: function(data) {
+		    	alert(data);
+		    }
+		});
+    });
+});
 @stop
