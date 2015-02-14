@@ -71,15 +71,15 @@ class AdminController extends BaseController {
 			$update->aduan_id = $aduan_id;
 			$update->save();
 
-			/*$aduan = Aduan::find($aduan_id);
-			Mail::send('emails.notifikasi_ubah_status', array('nama'=> $aduan->nama_pelapor, 'update' => $update), function($message){
+			$aduan = Aduan::find($aduan_id);
+			Mail::send('emails.notifikasi_ubah_status', array('nama'=> $aduan->nama_pelapor, 'update' => $update), function($message) use($aduan) {
 				$message->to($aduan->email_pelapor, $aduan->nama_pelapor)
 					->subject('Notifikasi Perubahan Status Aduan');
-			});*/	
+			});	
 
 			return Response::json("data berhasil disimpan");
 		} catch (Exception $ex) {
-			return Response::json('data gagal disimpan');
+			return Response::json("data gagal disimpan");
 		}
 	}
 
@@ -96,6 +96,6 @@ class AdminController extends BaseController {
 					->subject('Laporan Aduan Masyarakat Terkait Taman Bandung');
 			});
 		}
-		return Redirect::to('/')->withalert('Email telah dikirimkan');
+		return Redirect::to('app/admin')->withalert('Email telah dikirimkan');
 	}
 }
