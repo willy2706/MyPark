@@ -64,6 +64,8 @@ class AdminController extends BaseController {
 	public function postUpdatestatus($aduan_id) {
 		try {
 			$input = Input::all();
+			if(Aduan::find($aduan_id)->status == $input['status'])
+				return Response::json("status sama dengan sebelumnya");
 			$update = new Update;
 			$update->status = $input['status'];
 			$update->waktu = Carbon::now();
