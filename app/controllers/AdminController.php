@@ -37,7 +37,7 @@ class AdminController extends BaseController {
 
 	public function getLogin() {
 		if (Auth::check()) {
-			return Redirect::intended('/app/admin');
+			return Redirect::intended('app/admin');
 		} else {
 			Session::put('admin', true);
 			return View::make('login');
@@ -47,15 +47,13 @@ class AdminController extends BaseController {
 	public function postLogin() {
 		$input = Input::all();
 		if (Auth::attempt(Input::only('username', 'password'))) {
-			// var_dump(Auth:: check());exit;
 			return Redirect::intended('app/admin')->withusername(Auth::user()->username);
 		} else {
-			return Redirect::back();
+			return Redirect::back()->withfail(true);
 		}
 	}
 
 	public function getLogout() {
-		// return Response::json('logout');
 		Auth::logout();
 		Session::flush();
 		return Redirect::to('app/admin');
@@ -91,7 +89,7 @@ class AdminController extends BaseController {
 		$taman = Taman::find($aduan->taman_id);
 		$dinas = $input['dinas'];
 		$N = count($dinas);
-		for($i=0; $i< $N; $i++){
+		for ($i=0; $i< $N; $i++){
 			$dinas_terkait = PihakB::find($dinas[$i]);
 			Mail::send('emails.laporan_kepada_dinas', array('dinas_terkait'=> $dinas_terkait, 'aduan' => $aduan, 'taman' => $taman), function($message) use ($dinas_terkait){
 				$message->to($dinas_terkait->email, $dinas_terkait->nama)

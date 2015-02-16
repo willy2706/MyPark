@@ -31,7 +31,7 @@
 				<h2><center>Daftar aduan taman</center> <hr> </h2>	
 				<h3>{{$data->tanggal}}</h3>
 				<div class="satuaduan">
-					<div type="hidden" id= "aduan">{{$data->id}}</div>
+					<div type="hidden" class="hide" id= "aduan">{{$data->id}}</div>
 					<div class="juduladuan">{{$data->judul}}</div>
 					<div class= "lokasiaduan">{{$taman->nama}}, alamat: {{$taman->alamat}}</div><br>
 					<div class="statusaduan">{{$data->status}}</div>

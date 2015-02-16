@@ -26,13 +26,13 @@ class TamanController extends BaseController {
 		$aduan->foto = $filename;
 		$aduan->tanggal = Carbon::now();
 		// return Response::json($aduan);
-		$aduan->save();
       
 		Mail::send('emails.notifikasi_terima_aduan', array('nama'=>Input::get('nama_pelapor')), function($message){
 			$message->to(Input::get('email_pelapor'), Input::get('nama_pelapor'))
 				->subject('Notifikasi Penerimaan Aduan dari Taman Bandung');
 		});
       
+      	$aduan->save();
 		return Redirect::to('/')->withalert('aduan telah disubmit');
 	}
 

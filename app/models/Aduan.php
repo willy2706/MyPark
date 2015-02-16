@@ -46,7 +46,7 @@ class Aduan extends Eloquent {
 	public function getStatusAttribute() {
 		$temp = $this->updateTable()->orderBy('waktu','desc');
 		// var_dump($temp->orderBy('waktu','desc')->lists('status'));exit;
-		if ($temp == null) return 'UNSOLVED';
+		if ($temp->pluck('status') == null) return 'UNSOLVED';
 		else return $temp->pluck('status');
 	}
 
