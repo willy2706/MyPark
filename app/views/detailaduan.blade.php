@@ -35,6 +35,7 @@
 					<div class="juduladuan">{{$data->judul}}</div>
 					<div class= "lokasiaduan">{{$taman->nama}}, alamat: {{$taman->alamat}}</div><br>
 					<div class="isiaduan">{{$data->deskripsi}}</div>
+					@if(Auth::check())
 					<br> 
 					{{Form::select('options', array('UNSOLVED' => 'Belum Ditangani', 'IN PROGRESS' => 'Sedang Ditangani', 'INVALID' => 'Tidak Valid', 'SOLVED' => 'Selesai'), $data->status, array('id' => 'options'))}}
 					<!-- 
@@ -70,8 +71,9 @@
 						<div align="right"><p></p>
 							<input type="submit" value="Kirim Pesan">
 						<p></p>
+						</div>
 					{{Form::close()}}
-					</div>
+					@endif
 				</div>
 			</div>
 		</div>

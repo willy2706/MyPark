@@ -36,16 +36,13 @@
 						<th>Judul</th>
 						<th>Status</th>
 						<th>Tanggal</th>
-						<th></th>
 					</tr>
 					@foreach($aduan as $da)
 					<tr>
-						<td>{{$da->judul}}</td>
+<!-- 						{{Request::is('app/*') ? url('app/admin') : url('/')}} -->
+						<td><a href={{Request::is('app/*') ? url('app/admin/detailaduan/'.$da->id) : url('detailaduan/'.$da->id)}}>{{$da->judul}} </a></td>
 						<td>{{$da->status}}</td>
 						<td>{{$da->tanggal}} WIB</td>
-						@if (Auth::check())
-						<td><a href={{url('app/admin/detailaduan/'.$da->id)}}>Edit</a></td>
-						@endif
 					</tr>
 					@endforeach
 				</table>
