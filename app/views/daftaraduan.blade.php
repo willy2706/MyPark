@@ -31,7 +31,7 @@
 				<h2><center>Daftar aduan taman</center> <hr> </h2> 
 				
 				
-				<table>
+				<table class="CSSTableGenerator">
 					<tr>
 						<th>Judul</th>
 						<th>Status</th>
@@ -40,7 +40,7 @@
 					@foreach($aduan as $da)
 					<tr>
 <!-- 						{{Request::is('app/*') ? url('app/admin') : url('/')}} -->
-						<td><a href={{Request::is('app/*') ? url('app/admin/detailaduan/'.$da->id) : url('detailaduan/'.$da->id)}}>{{$da->judul}} </a></td>
+						<td><a class="noline" href={{Request::is('app/*') ? url('app/admin/detailaduan/'.$da->id) : url('detailaduan/'.$da->id)}}>{{$da->judul}} </a></td>
 						<td>{{$da->status}}</td>
 						<td>{{$da->tanggal}} WIB</td>
 					</tr>
