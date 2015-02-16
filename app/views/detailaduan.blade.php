@@ -86,7 +86,7 @@ $(document).ready(function() {
     	var host = window.location.host;
 		$.ajax({
 		    type: 'post',
-		    url: 'http://'+host+'/app/admin/updatestatus/'+id+'?status='+options,
+		    url: 'http://'+host+'/MyPark/public/app/admin/updatestatus/'+id+'?status='+options,
 		    beforeSend: function(request) {
 		        return request.setRequestHeader('X-CSRF-Token', $("meta[name='token']").attr('content'));
 		    },
