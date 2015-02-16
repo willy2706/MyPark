@@ -1662,3 +1662,7 @@ border-width:0px 0px 1px 1px;
     text-decoration: none;
     color: black;
 }
+
+.hide {
+	display: none;
+}

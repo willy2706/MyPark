@@ -6,7 +6,10 @@
 
 @section('content')
 	{{ Form::open(array('files'=>true, 'method'=>'post', 'class'=>'form-horizontal')) }}
-	<div class="body">
+	<div class="body">	
+		@if(Session::has('fail'))
+		Username dan password tidak cocok
+		@endif
 		<div class="loginbg">
 			<label>Username: </label>
 			<input name="username" type="text"><br><p></p>
